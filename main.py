@@ -36,7 +36,7 @@ CRATE_BACK = pygame.image.load('assets/sprite/Wood_panel_back.png')
 CRATE_SIDE = pygame.image.load('assets/sprite/Wood_panel_side.png')
 CRATE_SIDE_BACK = pygame.image.load('assets/sprite/Wood_panel_side_back.png')
 
-Score_font = pygame.font.SysFont('Arial', 50, bold=True, italic=False)
+Score_font = pygame.font.Font('assets/fonts/impact.ttf', 40)
 Back_font = pygame.font.Font('assets/fonts/impact.ttf', 50)
 Title_font = pygame.font.Font('assets/fonts/impact.ttf', 200)
 Start_font = pygame.font.Font('assets/fonts/impact.ttf', 100)

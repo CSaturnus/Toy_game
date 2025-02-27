@@ -13,7 +13,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Toy Maker")
 
 clock = pygame.time.Clock() 
-FPS = 120
+FPS = 60
 
 WHITE = (255, 255, 255)
 BLACK = (0,0,0)
@@ -42,7 +42,7 @@ Title_font = pygame.font.Font('assets/fonts/impact.ttf', 200)
 Start_font = pygame.font.Font('assets/fonts/impact.ttf', 100)
 Final_score_font = pygame.font.Font('assets/fonts/impact.ttf', 75)
 
-VOLUME_CONTROLL = 0.2
+VOLUME_CONTROLL = 0.1
 
 def get_sprite(sheet, x, y, width, height):
     sprite = pygame.Surface((width, height), pygame.SRCALPHA)
@@ -65,7 +65,7 @@ class Floor_wall:
         pygame.draw.rect(self.screen, Wall_COLOUR, self.wall_rect)
 
 class Toy:
-    def __init__(self, screen, posx, posy, colour, broken, speed = -1):
+    def __init__(self, screen, posx, posy, colour, broken, speed = -2):
         self.screen = screen
         self.posx = posx
         self.posy = posy
@@ -76,7 +76,7 @@ class Toy:
         self.broken = broken # False = 0, True = 1
         self.grabbed = False
         self.falling = False
-        self.acceleration_fall = 0.02
+        self.acceleration_fall = 0.04
         self.garbage = False
         self.score = True
 
@@ -199,7 +199,7 @@ class Clock:
         self.angle_radians_small = math.radians(self.angle_small)
         self.time_counter_small = 0
 
-        self.speed_spawn_list = [1.5, 1.25, 1, 0.75, 0.5]
+        self.speed_spawn_list = [1.5, 1.1, 0.8, 0.5, 0.2]
         self.speed_spawn_list_counter = 0
         self.speed_spawn = self.speed_spawn_list[self.speed_spawn_list_counter]
 
@@ -503,7 +503,7 @@ async def main():
         global VOLUME_CONTROLL
         if musiconoff == True:
             Music_text_type = "On"
-            VOLUME_CONTROLL = 0.2
+            VOLUME_CONTROLL = 0.1
         else:
             Music_text_type = "Off"
             VOLUME_CONTROLL = 0
